@@ -51,7 +51,8 @@ public final class Kontakt implements Serializable {
         return opomba;
     }
 
-    public Kontakt(String ime, String priimek, String naslov, String elektronskaPosta, String telefon, String mobilniTelefon, String opomba) {
+    public Kontakt(String id, String ime, String priimek, String naslov, String elektronskaPosta, String telefon, String mobilniTelefon, String opomba) {
+        this.id = id;
         this.ime = ime;
         this.priimek = priimek;
         this.naslov = naslov;

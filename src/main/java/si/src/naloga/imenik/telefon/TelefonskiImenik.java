@@ -36,13 +36,13 @@ public class TelefonskiImenik implements Imenik {
     public Kontakt dodajKontakt(Kontakt kontakt) {
         kontakt.generateId();
         seznamKontaktov.putIfAbsent(kontakt.getId(), kontakt);
-        return kontakt;
+        return seznamKontaktov.get(kontakt.getId());
     }
 
     @Override
     public Kontakt urediKontakt(Kontakt kontakt) {
         seznamKontaktov.put(kontakt.getId(), kontakt);
-        return kontakt;
+        return seznamKontaktov.get(kontakt.getId());
     }
 
     @Override
@@ -51,8 +51,8 @@ public class TelefonskiImenik implements Imenik {
     }
 
     @Override
-    public String izpisiKontaktZaId(String id) {
-        return seznamKontaktov.get(id) != null ? seznamKontaktov.get(id).toString() : String.format("Kontakt z id %s ni bilo mogoce najti %n", id);
+    public Kontakt izpisiKontaktZaId(String id) {
+        return seznamKontaktov.get(id);
     }
 
     @Override

@@ -51,6 +51,6 @@ public class KontaktBuilder {
     }
 
     public Kontakt createKontakt() {
-        return new Kontakt(ime, priimek, naslov, elektronskaPosta, telefon, mobilniTelefon, opomba);
+        return new Kontakt(id, ime, priimek, naslov, elektronskaPosta, telefon, mobilniTelefon, opomba);
     }
 }

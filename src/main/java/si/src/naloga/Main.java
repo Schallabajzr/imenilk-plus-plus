@@ -8,6 +8,7 @@ import si.src.naloga.imenik.telefon.TelefonskiImenik;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -41,7 +42,8 @@ public class Main {
                 }
                 case "5" -> {
                     System.out.println("Vnesi id:");
-                    System.out.println(imenik.izpisiKontaktZaId(in.next()));
+                    Kontakt kontakt = imenik.izpisiKontaktZaId(in.next());
+                    System.out.println(kontakt != null ? kontakt.toString() : String.format("Kontakt z id %s ni bilo mogoce najti %n", in.next()));
                 }
                 case "6" -> System.out.printf("Stevilo kontaktov je %d %n", imenik.izpisiSteviloKontaktov());
                 case "7" -> imenik.shraniPodatke();

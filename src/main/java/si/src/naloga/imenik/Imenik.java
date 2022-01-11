@@ -43,7 +43,7 @@ public interface Imenik {
      *
      * @return
      */
-    String izpisiKontaktZaId(String id);
+    Kontakt izpisiKontaktZaId(String id);
 
     /**
      * Izpis kontakta po ID-ju
