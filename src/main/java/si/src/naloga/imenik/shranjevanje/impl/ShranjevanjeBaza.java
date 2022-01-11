@@ -31,7 +31,7 @@ public class ShranjevanjeBaza implements ShranjevanjeStrategy<Kontakt> {
     }
 
     @Override
-    public void shrani(Collection<Kontakt> podatki) throws SQLException {
+    public void shrani(List<Kontakt> podatki) throws SQLException {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_KONTAKT_SQL)) {
 
@@ -66,13 +66,13 @@ public class ShranjevanjeBaza implements ShranjevanjeStrategy<Kontakt> {
             while (rs.next()) {
                 result.add(new KontaktBuilder()
                         .setId(rs.getString("id"))
-                        .setIme("ime")
-                        .setPriimek("priimek")
-                        .setNaslov("naslov")
-                        .setElektronskaPosta("elektronska_posta")
-                        .setTelefon("telefon")
-                        .setMobilniTelefon("mobilni_telefon")
-                        .setOpomba("opomba")
+                        .setIme(rs.getString("ime"))
+                        .setPriimek(rs.getString("priimek"))
+                        .setNaslov(rs.getString("naslov"))
+                        .setElektronskaPosta(rs.getString("elektronska_posta"))
+                        .setTelefon(rs.getString("telefon"))
+                        .setMobilniTelefon(rs.getString("mobilni_telefon"))
+                        .setOpomba(rs.getString("opomba"))
                         .createKontakt());
             }
         } catch (SQLException e) {

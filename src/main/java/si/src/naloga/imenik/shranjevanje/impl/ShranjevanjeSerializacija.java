@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Collection;
 import java.util.List;
 
 public class ShranjevanjeSerializacija implements ShranjevanjeStrategy<Kontakt> {
@@ -19,7 +18,7 @@ public class ShranjevanjeSerializacija implements ShranjevanjeStrategy<Kontakt> 
     }
 
     @Override
-    public void shrani(Collection<Kontakt> podatki) throws IOException {
+    public void shrani(List<Kontakt> podatki) throws IOException {
         try (FileOutputStream fout = new FileOutputStream("kontakti.ser");
              ObjectOutputStream oos = new ObjectOutputStream(fout)) {
             oos.writeObject(podatki);

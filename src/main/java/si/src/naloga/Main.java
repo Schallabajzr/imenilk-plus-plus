@@ -30,7 +30,8 @@ public class Main {
 
                 case "2" -> {
                     System.out.println("Vnasanje kontakta");
-                    imenik.dodajKontakt(vnosKontakta(in));
+                    System.out.printf("Dodajanje kontakta %s %n", imenik.dodajKontakt(vnosKontakta(in)).toString());
+
                 }
                 case "3" -> {
                     System.out.println("Urejanje kontakta");
@@ -47,7 +48,9 @@ public class Main {
                 }
                 case "6" -> System.out.printf("Stevilo kontaktov je %d %n", imenik.izpisiSteviloKontaktov());
                 case "7" -> imenik.shraniPodatke();
-                case "8" -> imenik.beriPodatke();
+                case "8" -> imenik.beriPodatke().stream()
+                        .map(Kontakt::toString)
+                        .forEach(System.out::println);
                 case "9" -> {
                     try {
                         imenik.izvoziPodatkeVCsvDatoteko();
@@ -102,8 +105,8 @@ public class Main {
         System.out.println("4 - briši kontakt po ID-ju");
         System.out.println("5 - izpiši kontakt po ID-ju");
         System.out.println("6 - izpiši število vseh kontaktov");
-        System.out.println("7 - Shrani kontakte na disk (serializacija)");
-        System.out.println("8 - Preberi kontake iz serializirano datoteke");
+        System.out.println("7 - Shrani kontakte");
+        System.out.println("8 - Preberi kontake");
         System.out.println("9 - Izvozi kontakte v csv");
         System.out.println("M - Spremeni nacin shranjevanja");
         System.out.println();

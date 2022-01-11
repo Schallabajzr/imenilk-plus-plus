@@ -17,7 +17,7 @@ public class ShranjevanjeNullObject implements ShranjevanjeStrategy<Kontakt> {
     }
 
     @Override
-    public void shrani(Collection<Kontakt> podatki) {
+    public void shrani(List<Kontakt> podatki) {
         System.out.println(SHRANJEVANJE_MESSAGE);
     }
 

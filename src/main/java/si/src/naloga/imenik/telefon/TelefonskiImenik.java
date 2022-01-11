@@ -41,7 +41,9 @@ public class TelefonskiImenik implements Imenik {
 
     @Override
     public Kontakt urediKontakt(Kontakt kontakt) {
-        seznamKontaktov.put(kontakt.getId(), kontakt);
+        if (seznamKontaktov.containsKey(kontakt.getId())) {
+            seznamKontaktov.put(kontakt.getId(), kontakt);
+        }
         return seznamKontaktov.get(kontakt.getId());
     }
 
@@ -57,12 +59,12 @@ public class TelefonskiImenik implements Imenik {
 
     @Override
     public int izpisiSteviloKontaktov() {
-       return seznamKontaktov.size();
+        return seznamKontaktov.size();
     }
 
     @Override
     public void shraniPodatke() throws IOException, SQLException {
-        shranjevanjeStrategy.shrani(seznamKontaktov.values());
+        shranjevanjeStrategy.shrani(seznamKontaktov.values().stream().toList());
     }
 
     @Override
