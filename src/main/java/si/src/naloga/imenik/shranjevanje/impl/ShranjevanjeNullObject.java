@@ -17,9 +17,8 @@ public class ShranjevanjeNullObject implements ShranjevanjeStrategy<Kontakt> {
     }
 
     @Override
-    public List<Kontakt> shrani(Collection<Kontakt> podatki) {
+    public void shrani(Collection<Kontakt> podatki) {
         System.out.println(SHRANJEVANJE_MESSAGE);
-        return new ArrayList<>();
     }
 
     @Override

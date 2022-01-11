@@ -7,6 +7,7 @@ import si.src.naloga.imenik.shranjevanje.ShranjevanjeStrategyFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -59,7 +60,7 @@ public class TelefonskiImenik implements Imenik {
     }
 
     @Override
-    public void shraniPodatke() throws IOException {
+    public void shraniPodatke() throws IOException, SQLException {
         shranjevanjeStrategy.shrani(seznamKontaktov.values());
     }
 

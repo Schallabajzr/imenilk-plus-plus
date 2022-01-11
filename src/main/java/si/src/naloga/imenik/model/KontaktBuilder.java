@@ -1,6 +1,7 @@
 package si.src.naloga.imenik.model;
 
 public class KontaktBuilder {
+    private String id;
     private String ime;
     private String priimek;
     private String naslov;
@@ -8,6 +9,11 @@ public class KontaktBuilder {
     private String telefon;
     private String mobilniTelefon;
     private String opomba;
+
+    public KontaktBuilder setId(String id) {
+        this.id = id;
+        return this;
+    }
 
     public KontaktBuilder setIme(String ime) {
         this.ime = ime;

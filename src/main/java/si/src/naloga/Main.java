@@ -7,11 +7,12 @@ import si.src.naloga.imenik.shranjevanje.ShranjevanjeStrategyFactory;
 import si.src.naloga.imenik.telefon.TelefonskiImenik;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
 
         Imenik imenik = new TelefonskiImenik();
 

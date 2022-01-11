@@ -4,6 +4,7 @@ import si.src.naloga.core.ShranjevanjeStrategy;
 import si.src.naloga.imenik.model.Kontakt;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public interface Imenik {
      * Serializiraj seznam kontoktov na disk.
      * Ime datoteke naj bo "kontakti.ser"
      */
-    void shraniPodatke() throws IOException;
+    void shraniPodatke() throws IOException, SQLException;
 
     /**
      * Pereberi serializiran seznam kontakotv iz diska
