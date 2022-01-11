@@ -34,6 +34,7 @@ public class TelefonskiImenik implements Imenik {
 
     @Override
     public Kontakt dodajKontakt(Kontakt kontakt) {
+        kontakt.generateId();
         seznamKontaktov.putIfAbsent(kontakt.getId(), kontakt);
         return kontakt;
     }

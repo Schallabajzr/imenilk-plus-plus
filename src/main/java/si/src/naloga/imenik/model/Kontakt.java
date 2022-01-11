@@ -10,7 +10,7 @@ public final class Kontakt implements Serializable {
     @Serial
     private static final long serialVersionUID = -6479947214633439920L;
 
-    private final String id;
+    private String id;
     private final String ime;
     private final String priimek;
     private final String naslov;
@@ -52,7 +52,6 @@ public final class Kontakt implements Serializable {
     }
 
     public Kontakt(String ime, String priimek, String naslov, String elektronskaPosta, String telefon, String mobilniTelefon, String opomba) {
-        this.id = UUID.randomUUID().toString();
         this.ime = ime;
         this.priimek = priimek;
         this.naslov = naslov;
@@ -60,6 +59,10 @@ public final class Kontakt implements Serializable {
         this.telefon = telefon;
         this.mobilniTelefon = mobilniTelefon;
         this.opomba = opomba;
+    }
+
+    public void generateId() {
+        this.id = UUID.randomUUID().toString();
     }
 
     @Override
