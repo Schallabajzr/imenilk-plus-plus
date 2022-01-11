@@ -65,7 +65,7 @@ public class TelefonskiImenik implements Imenik {
     }
 
     @Override
-    public Collection<Kontakt> beriPodatke() throws IOException, ClassNotFoundException {
+    public Collection<Kontakt> beriPodatke() throws IOException, ClassNotFoundException, SQLException {
         return shranjevanjeStrategy.pridobi();
     }
 

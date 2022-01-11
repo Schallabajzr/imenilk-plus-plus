@@ -6,20 +6,21 @@ import si.src.naloga.imenik.model.Kontakt;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
-import java.util.List;
 
 public interface Imenik {
 
     /**
      * Metaoda izpiše vse kontakte
+     *
      * @return
      */
     Collection<Kontakt> izpisiVseKontakte();
 
     /**
      * Metaoda doda nov kontakt v imenik
-     *
+     * <p>
      * onemogočimo dodajanje dupliciranega kontakta
+     *
      * @return
      */
     Kontakt dodajKontakt(Kontakt kontakt);
@@ -27,6 +28,7 @@ public interface Imenik {
     /**
      * Metoda popravi podatke na obstoječem kontaktu
      * ID kontakta ni mogoče spreminjati
+     *
      * @return
      */
     Kontakt urediKontakt(Kontakt kontakt);
@@ -38,12 +40,14 @@ public interface Imenik {
 
     /**
      * Izpis kontakta po ID-ju
+     *
      * @return
      */
     String izpisiKontaktZaId(String id);
 
     /**
      * Izpis kontakta po ID-ju
+     *
      * @return
      */
     int izpisiSteviloKontaktov();
@@ -56,13 +60,15 @@ public interface Imenik {
 
     /**
      * Pereberi serializiran seznam kontakotv iz diska
+     *
      * @return
      */
-    Collection<Kontakt> beriPodatke() throws IOException, ClassNotFoundException;
+    Collection<Kontakt> beriPodatke() throws IOException, ClassNotFoundException, SQLException;
 
     /**
      * Izvozi seznam kontakov CSV datoteko.
      * Naj uporabnik sam izbere ime izhodne datoteke.
+     *
      * @return
      */
     void izvoziPodatkeVCsvDatoteko() throws IOException;
